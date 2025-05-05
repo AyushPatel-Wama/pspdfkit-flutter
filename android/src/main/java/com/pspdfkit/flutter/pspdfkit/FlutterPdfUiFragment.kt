@@ -41,6 +41,18 @@ class FlutterPdfUiFragment : PdfUiFragment(), MenuProvider {
     private var customToolbarCallbacks: CustomToolbarCallbacks? = null
     private var customToolbarItems: List<Map<String, Any>>? = null
 
+    override fun onGenerateMenuItemIds(menuItems: MutableList<Int>):
+            List<Int> {
+        // Take the default menu item IDs and remove the required items.
+        menuItems.remove(PdfActivity.MENU_OPTION_EDIT_CONTENT)
+        menuItems.remove(PdfActivity.MENU_OPTION_OUTLINE)
+        menuItems.remove(PdfActivity.MENU_OPTION_SETTINGS)
+        menuItems.remove(PdfActivity.MENU_OPTION_SHARE)
+        menuItems.remove(PdfActivity.MENU_OPTION_THUMBNAIL_GRID)
+
+        // Return the new order for the menu items.
+        return menuItems
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
