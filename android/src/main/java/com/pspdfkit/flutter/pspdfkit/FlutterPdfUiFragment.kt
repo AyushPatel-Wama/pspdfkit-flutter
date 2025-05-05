@@ -31,6 +31,7 @@ import androidx.lifecycle.Lifecycle
 import com.pspdfkit.document.PdfDocument
 import com.pspdfkit.flutter.pspdfkit.api.CustomToolbarCallbacks
 import com.pspdfkit.ui.PdfUiFragment
+import com.pspdfkit.R
 
 
 class FlutterPdfUiFragment : PdfUiFragment(), MenuProvider {
